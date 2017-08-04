@@ -13,6 +13,7 @@ class Alpine(MergeRule):
         "easy HVAC":                                R(Text(" EasyHVAC "),rdescript="ColdFusion: SNetQuotes"),
         "as net":					                R(Text("SNet"), rdescript="ColdFusion: SNet"),
         "eric":                                     R(Text(" Erick "),rdescript="ColdFusion: SNetQuotes"),
+        "many split":                               R(Text(" mini split "),rdescript="ColdFusion: SNetQuotes"),
         }
     extras = [
     ]
