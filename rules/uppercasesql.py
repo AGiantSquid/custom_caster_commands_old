@@ -4,7 +4,7 @@ from caster.lib.dfplus.state.short import R
 
 from caster.lib.dfplus.additions import IntegerRefST
 
-from dragonfly import Text, Function
+from dragonfly import Text, Function, Repeat
 from dragonfly.actions.action_key import Key
 
 def _render_number(n):
