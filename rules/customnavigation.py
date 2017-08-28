@@ -10,7 +10,7 @@ from dragonfly.actions.action_key import Key
 class CustomNavigation(MergeRule):
     pronunciation = "custom navigation"
     mapping = {
-        "pine chat":                                R(Key("w-1"), rdescript="Custom Navigation: Alpine Chat"), 
+        "fire chat":                                R(Key("w-1"), rdescript="Custom Navigation: Alpine Chat"), 
         "kanban":                                   R(Key("w-2"), rdescript="Custom Navigation: Kanban"), 
         "get help | git hub":                       R(Key("w-3"), rdescript="Custom Navigation: GitHub"), 
         "chromium":                                 R(Key("w-4"), rdescript="Custom Navigation: Chrome"), 
@@ -21,9 +21,9 @@ class CustomNavigation(MergeRule):
         
         "open new file":                            R(Key("c-n"), rdescript="Custom Navigation: Open New File"), 
         "homer":                                    R(Key("home"), rdescript="Custom Navigation: Home Key"), 
-        "ender":                                    R(Key("end"), rdescript="Custom Navigation: End Key"), 
+        "ender | under":                                    R(Key("end"), rdescript="Custom Navigation: End Key"), 
         "toggle tab":                               R(Key("c-tab"), rdescript="Next Tab"),
-        "back tab [<n>]":                           R(Key("cs-tab"), rdescript="Previous Tab") * Repeat(extra="n"),
+        "back tab [<n>]":                           R(Key("s-tab"), rdescript="Previous Tab") * Repeat(extra="n"),
         }
     extras = [
         IntegerRefST("n", 1, 10),
