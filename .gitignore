@@ -11,4 +11,4 @@ complexity_report*
 *.*~
 
 #Ignore custom navigation bar
-/rules/customnavigationbar.py
+/rules/customnavigation/customnavigationbar.py
