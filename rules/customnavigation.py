@@ -10,18 +10,10 @@ from dragonfly.actions.action_key import Key
 class CustomNavigation(MergeRule):
     pronunciation = "custom navigation"
     mapping = {
-        "pine chat":                                R(Key("w-1"), rdescript="Custom Navigation: Alpine Chat"), 
-        "kanban":                                   R(Key("w-2"), rdescript="Custom Navigation: Kanban"), 
-        "get help | git hub":                       R(Key("w-3"), rdescript="Custom Navigation: GitHub"), 
-        "chromium":                                 R(Key("w-4"), rdescript="Custom Navigation: Chrome"), 
-        "slime tech":                               R(Key("w-5"), rdescript="Custom Navigation: Sublime Text"), 
-        "file system":                              R(Key("w-6"), rdescript="Custom Navigation: Open File Browser"), 
-        "sequel server":                            R(Key("w-7"), rdescript="Custom Navigation: MSSQL Management Studio"), 
-        "(get bash) | git bash":                    R(Key("w-8"), rdescript="Custom Navigation: ConEmu"), 
-        
-        "open new file":                            R(Key("c-n"), rdescript="Custom Navigation: Open New File"), 
-        "homer":                                    R(Key("home"), rdescript="Custom Navigation: Home Key"), 
-        "ender":                                    R(Key("end"), rdescript="Custom Navigation: End Key"), 
+        "open new file":                            R(Key("c-n"), rdescript="Maximize Window"), 
+        "homer":                                    R(Key("home"), rdescript="Maximize Window"), 
+        "ender":                                    R(Key("end"), rdescript="Maximize Window"), 
+        "open new file":                            R(Key("c-n"), rdescript="Maximize Window"),
         "toggle tab":                               R(Key("c-tab"), rdescript="Next Tab"),
         "back tab [<n>]":                           R(Key("cs-tab"), rdescript="Previous Tab") * Repeat(extra="n"),
         }
