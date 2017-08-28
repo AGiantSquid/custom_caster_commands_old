@@ -1,5 +1,4 @@
 # Ignore junk
-.idea/
 *.pyc
 *.json
 *.wav
@@ -11,16 +10,5 @@ complexity_report*
 *.*\#
 *.*~
 
-
-# Ignore Natlink
-/core/
-
-# Ignore User Rules and Filters
-#/caster/user
-
-# Ignore Custom Sikuli Scripts
-/caster/asynch/sikuli/scripts
-
-# Ignore SonarQube
-.sonar
-sonar-project.properties
+#Ignore custom navigation bar
+/rules/customnavigationbar.py

@@ -10,3 +10,4 @@ from customvocabulary import CustomVocabulary
 from custompunctuation import CustomPunctuation
 from uppercasesql import UpperCaseSQL
 from customnavigation import CustomNavigation
+from customnavigationbar import CustomNavigationBar
