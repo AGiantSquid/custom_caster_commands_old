@@ -8,6 +8,9 @@ class CustomVocabulary(MergeRule):
     pronunciation = "custom vocabulary"
     mapping = {
         "Schultz":                                  R(Text(" Shultz "),rdescript="CustomVocabulary: Shultz"),
+        "Lower Schultz":                                  R(Text("shultz"),rdescript="CustomVocabulary: Shultz"),
+        "Ashley Gmail":                                  R(Text("ashley.e.shultz@gmail.com"),rdescript="CustomVocabulary: Shultz"),
+        "Ashley Green key email":                                  R(Text("ashley@greenkeytech.com"),rdescript="CustomVocabulary: Shultz"),
         "e-mail":                                   R(Text(" email "),rdescript="CustomVocabulary: Email"),
         }
     extras = [
