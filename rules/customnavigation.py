@@ -9,13 +9,12 @@ from dragonfly.actions.action_key import Key
 
 class CustomNavigation(MergeRule):
     pronunciation = "custom navigation"
-    mapping = {
-        "open new file":                            R(Key("c-n"), rdescript="Maximize Window"), 
-        "homer":                                    R(Key("home"), rdescript="Maximize Window"), 
-        "ender":                                    R(Key("end"), rdescript="Maximize Window"), 
-        "open new file":                            R(Key("c-n"), rdescript="Maximize Window"),
+    mapping = {     
+        "open new file":                            R(Key("c-n"), rdescript="Custom Navigation: Open New File"), 
+        "homer":                                    R(Key("home"), rdescript="Custom Navigation: Home Key"), 
+        "ender | under":                            R(Key("end"), rdescript="Custom Navigation: End Key"), 
         "toggle tab":                               R(Key("c-tab"), rdescript="Next Tab"),
-        "back tab [<n>]":                           R(Key("cs-tab"), rdescript="Previous Tab") * Repeat(extra="n"),
+        "back tab [<n>]":                           R(Key("s-tab"), rdescript="Previous Tab") * Repeat(extra="n"),
         }
     extras = [
         IntegerRefST("n", 1, 10),
