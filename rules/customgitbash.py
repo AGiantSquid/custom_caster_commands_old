@@ -30,6 +30,9 @@ class CustomGitBashRule(MergeRule):
         "bug fix commit <n>":           R(Mimic("commit")+Text("fixes #%(n)d ")+Key("backspace"), rdescript="GIT: Bug Fix Commit"),
         "reference commit <n>":         R(Mimic("commit")+Text("refs #%(n)d ")+Key("backspace"), rdescript="GIT: Reference Commit"),
         "checkout":                     R(Text( "git checkout " ), rdescript="GIT: Check Out"),
+        "check out new branch":         R(Text( "git checkout -b " ), rdescript="GIT: Check Out New Branch"),
+        "difference":                   R(Text( "git diff" )+ Key('enter'), rdescript="GIT: Diff"),
+
         "branch":                       R(Text( "git branch" )+Key("enter"), rdescript="GIT: Branch"),
         "remote":                       R(Text( "git remote " ), rdescript="GIT: Remote"),
         "merge":                        R(Text( "git merge " ), rdescript="GIT: Merge"),
@@ -77,6 +80,8 @@ class CustomGitBashRule(MergeRule):
         #Alpine Specific Commands
         "CD alpine":                    R(Text( "cd /x/alpine/" )+Key("enter"), rdescript="GIT: Navigate To Alpine Directory"),
         "CD nodes":                     R(Text( "cd /c/nodes/" )+Key("enter"), rdescript="GIT: Navigate To Alpine Directory"),
+        "CD Castor":                    R(Text( "cd /c/NatLink/NatLink/MacroSystem/caster" )+Key("enter"), rdescript="GIT: Navigate To Caster Directory"),
+        "CD custom Castor":                    R(Text( "cd /c/NatLink/NatLink/MacroSystem/caster/user" )+Key("enter"), rdescript="GIT: Navigate To Caster Directory"),
         "vagrant halt":                 R(Text( "vagrant halt" )+Key("enter"), rdescript="GIT: Navigate To Alpine Directory"),
         "vagrant up":                   R(Text( "vagrant up node1" )+Key("enter"), rdescript="GIT: Navigate To Alpine Directory"),
 		"checkout develop":             R(Text( "git checkout develop" ) + Key("enter"), rdescript="GIT: Check Out"),

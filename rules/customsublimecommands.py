@@ -23,7 +23,7 @@ class CustomSublimeCommands(MergeRule):
         "[go to] group [<n2>]":                             R(Key("c-%(n2)s"), rdescript="Sublime: Go to Group #"),
         "[go to] line <n>":                                 R(Key("c-g") + Pause("10") + Text("%(n)s") + Key("enter"), rdescript="Sublime: Go to Line #"),
         "jump to [<text>]":                                 R(Key("c-i") + Pause("10") + Text("%(text)s") + Key("enter") + Key("escape"), rdescript="Sublime: Get Next"),
-
+        "expand|fill quotes":                               R(Key("cs-space"), rdescript="Atom: Expand Selection to Quotes"),
                 # SymbolSpecs.FUNCTION:                       R(Text("fu\\") + Key("tab"), rdescript="CustomSublime: Function"),
         # SymbolSpecs.IF:                             R(Text("if\\") + Key("tab"), rdescript="ColdFusion: If"),
     }
