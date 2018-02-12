@@ -44,7 +44,7 @@ class CustomGitBashRule(MergeRule):
         "(get push | push)":            R(Text("git push ") + Key("enter"), rdescript="GIT: Push"),
         "(get push origin | push origin)": R(Text("git push -u origin "), rdescript="GIT: Push Origin"),
         "pull":                         R(Text("git pull") + Key("enter"), rdescript="GIT: Pull"),
-        "CD up":                        R(Text("cd ..") + Key("enter"), rdescript="GIT: Up Directory"),
+        "dirrup":                        R(Text("cd ../ ; ls;") + Key("enter"), rdescript="GIT: Up Directory"),
         "list":                         R(Text("ls") + Key("enter"), rdescript="GIT: List"),
         "make directory":               R(Text("mkdir "), rdescript="GIT: Make Directory"),
         "abort":                        R(Key("c-c "), rdescript="GIT: Abort"),

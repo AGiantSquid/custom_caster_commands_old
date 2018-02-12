@@ -16,7 +16,7 @@ class YarnCommands(MergeRule):
         "build my client":  R(Text("yarn build client --env api-ashley"), rdescript="Yarn: yarn global add"),
         "build my API":     R(Text("yarn build api --env api-ashley"), rdescript="Yarn: yarn global add"),
         "yarn client":      R(Text("yarn client"), rdescript="Yarn: yarn global add"),
-        "API ashley"        R(Text("api-ashley"), rdescript="Yarn: yarn global add"),
+        "API ashley":        R(Text("api-ashley"), rdescript="Yarn: yarn global add"),
     }
     extras = [
         IntegerRefST("n", 1, 10),
