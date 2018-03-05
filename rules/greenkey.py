@@ -7,7 +7,7 @@ from dragonfly import Text
 class CustomVocabulary(MergeRule):
     pronunciation = "Green key"
     mapping = {
-        "Ashley Green key email":                                  	R(Text("ashley@greenkeytech.com"),rdescript="CustomVocabulary: Shultz"),
+        "Ashley at Green key":                                  	R(Text("ashley@greenkeytech.com"),rdescript="CustomVocabulary: Shultz"),
         "Green key to":                                  			R(Text("greenkeytech"),rdescript="CustomVocabulary: Shultz"),
         "Green key":                                  				R(Text("GreenKey"),rdescript="CustomVocabulary: Shultz"),
        	
