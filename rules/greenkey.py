@@ -7,10 +7,10 @@ from dragonfly import Text
 class CustomVocabulary(MergeRule):
     pronunciation = "Green key"
     mapping = {
-        "Ashley at Green key":                                  	R(Text("ashley@greenkeytech.com"),rdescript="CustomVocabulary: Shultz"),
-        "Green key to":                                  			R(Text("greenkeytech"),rdescript="CustomVocabulary: Shultz"),
-        "Green key":                                  				R(Text("GreenKey"),rdescript="CustomVocabulary: Shultz"),
-       	
+        "(Ashley at Green key | Ashley Greinke)":                                  	R(Text("ashley@greenkeytech.com"),rdescript="CustomVocabulary: Shultz"),
+        "(Greinke Tech | Green key to)":                                  			R(Text("greenkeytech"),rdescript="CustomVocabulary: Shultz"),
+        "(API Greinke Tech | API Green key to)":              R(Text("api.greenkeytech.com"),rdescript="CustomVocabulary: Shultz"),
+        "(Greinke | Green key)":                                  				R(Text("GreenKey"),rdescript="CustomVocabulary: Shultz"),
         }
     extras = [
     ]

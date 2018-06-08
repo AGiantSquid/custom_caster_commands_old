@@ -13,7 +13,7 @@ class CustomNavigationBar(MergeRule):
         "slime tech":                               R(Key("w-3"), rdescript="Maximize Window"), 
         "file system":                              R(Key("w-4"), rdescript="Maximize Window"), 
         "(get bash) | git bash":                    R(Key("w-5"), rdescript="Maximize Window"), 
-        "Saponify":                                 R(Key("w-9"), rdescript="Maximize Window"),         
+        "TBN | Debian":                             R(Key("w-6"), rdescript="Maximize Window"),         
     }
     extras = []
     defaults = {}

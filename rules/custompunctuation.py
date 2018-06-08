@@ -15,7 +15,8 @@ class CustomPunctuation(MergeRule):
         # my custom overrides
         "double quotes":                            R(Key("dquote,dquote,left"), rdescript="Quotation Marks"),
         "Quach it":                                 R(Key("apostrophe,apostrophe,left"), rdescript="Thin Quotation Marks"),
-        "equals | equal to":                        R(Text(" = "), rdescript="Equals"),
+        "equals | equal to":                        R(Text("="), rdescript="Equals"),
+        "equeft":                                   R(Text(" = "), rdescript="Equals"),
         "Schrock it | shrocket":                    R(Text(" => "), rdescript="Equals"),
         "not equals | not equal to":                R(Text(" != "), rdescript="Not Equal To"),
         "is equal to":                              R(Text(" == "), rdescript="Not Equal To"),
@@ -50,7 +51,7 @@ class CustomPunctuation(MergeRule):
         "carrot":                                   R(Text("^"), rdescript="Carat"),
         "(period | dot)":                           R(Text("."), rdescript="Dot"),
         "at sign":                                  R(Text("@"), rdescript="At Sign"),
-        "hash tag | pound sign":                    R(Text("#"), rdescript="Hash Tag"),
+        "hash tag | pound sign | pounder":                    R(Text("#"), rdescript="Hash Tag"),
         "apostrophe":                               R(Text("'"), rdescript="Apostrophe"),
         "crunder":                               R(Text("_"), rdescript="Underscore"),
         "shawls":                                R(Text("\\"), rdescript="Back Slash"),
