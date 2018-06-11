@@ -81,6 +81,7 @@ class CustomGitBashRule(MergeRule):
         "to file":                      R(Text(" > FILENAME"), rdescript="Bash: To File"),
 
         # Alpine Specific Commands
+        "CD":                           R(Text("cd ; ls") + Key("left") + Key("left") + Key("left") + Key("left"), rdescript="GIT: Navigate To Caster Directory"),
         "CD Castor":                    R(Text("cd /c/NatLink/NatLink/MacroSystem/caster") + Key("enter"), rdescript="GIT: Navigate To Caster Directory"),
         "CD custom Castor":                    R(Text("cd /c/NatLink/NatLink/MacroSystem/caster/user") + Key("enter"), rdescript="GIT: Navigate To Caster Directory"),
         "checkout develop":             R(Text("git checkout develop") + Key("enter"), rdescript="GIT: Check Out"),
