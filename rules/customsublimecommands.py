@@ -13,7 +13,7 @@ from caster.lib.dfplus.state.short import R
 class CustomSublimeCommands(MergeRule):
     pronunciation = "custom sublime commands"
     mapping = {
-        #my custom overrides
+        # my custom overrides
         "save file as":
             R(Key("cs-s"), rdescript="Sublime: Save As"),
         "grab it":
@@ -42,6 +42,9 @@ class CustomSublimeCommands(MergeRule):
             R(Key("dquote"), rdescript="Quotation Marks"),
         "Quach it":
             R(Key("apostrophe"), rdescript="Thin Quotation Marks"),
+        "(cellaring | sell rang) <n> <n3>":
+            R(Key("c-g") + Pause("5") + Text("%(n)s") + Key("enter") + Pause("5") + Key("c-k") + Key("c-space") + Pause("5") + Key("c-g") + Pause("10") + Text("%(n3)s") + Key("enter") + Key("end") + Key("c-k") + Key("c-a")),
+
     }
 
     extras = [
@@ -49,6 +52,7 @@ class CustomSublimeCommands(MergeRule):
         Dictation("mim"),
         IntegerRefST("n", 1, 1000),
         IntegerRefST("n2", 1, 9),
+        IntegerRefST("n3", 1, 999),
     ]
     defaults = {"n": 1, "mim": "", "text": ""}
 

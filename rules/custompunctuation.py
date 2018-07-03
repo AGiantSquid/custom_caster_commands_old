@@ -105,6 +105,10 @@ class CustomPunctuation(MergeRule):
             R(Key("tab"), rdescript="Tab") * Repeat(extra="npunc"),
         'tarsh [<npunc>]':
             R(Key("tab"), rdescript="Tab") * Repeat(extra="npunc"),
+        'shaber [<npunc>]':
+            R(Key("c-rbracket"), rdescript="Tab") * Repeat(extra="npunc"),
+        'shable [<npunc>]':
+            R(Key("c-lbracket"), rdescript="Tab") * Repeat(extra="npunc"),
         "swipe":
             R(Text(", "), rdescript="Comma + Space"),
     }
