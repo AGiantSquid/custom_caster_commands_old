@@ -14,9 +14,9 @@ class CustomPunctuation(MergeRule):
 
         # my custom overrides
         "double quotes":
-            R(Key("dquote,dquote,left"), rdescript="Quotation Marks"),
+            R(Key("dquote"), rdescript="Quotation Marks"),
         "Quach it":
-            R(Key("apostrophe,apostrophe,left"), rdescript="Thin Quotation Marks"),
+            R(Key("apostrophe"), rdescript="Thin Quotation Marks"),
         "equals | equal to":
             R(Text("="), rdescript="Equals"),
         "equeft":
@@ -35,10 +35,6 @@ class CustomPunctuation(MergeRule):
             R(Text(" >= "), rdescript=">= Comparison"),
         "[is] less [than] [or] equal [to]":
             R(Text(" <= "), rdescript="<= Comparison"),
-        "kirksorp":
-            R(Key("lbrace"), rdescript="Left Curly Brace"),
-        "kirkos":
-            R(Key("rbrace"), rdescript="Right Curly Brace"),
         "deplush":
             R(Text(" + "), rdescript="Plus with padding"),
         "plus":
@@ -58,13 +54,27 @@ class CustomPunctuation(MergeRule):
         "sinker":
             R(Key("semicolon"), rdescript="Semicolon"),
         "prekris":
-            R(Key("lparen, rparen, left"), rdescript="Parentheses"),
+            R(Key("lparen"), rdescript="Parentheses"),
+        "prekorp":
+            R(Key("lparen"), rdescript="Parentheses"),
+        "prekos":
+            R(Key("rparen"), rdescript="Parentheses"),
         "brax":
-            R(Key("lbracket, rbracket, left"), rdescript="Square Brackets"),
+            R(Key("lbracket"), rdescript="Square Brackets"),
+        "brackorp":
+            R(Key("lbracket"), rdescript="Left Square Bracket"),
+        "brackos":
+            R(Key("rbracket"), rdescript="Right Square Bracket"),
         "curly":
-            R(Key("lbrace, rbrace, left"), rdescript="Curly Braces"),
+            R(Key("lbrace"), rdescript="Curly Braces"),
+        "kirksorp":
+            R(Key("lbrace"), rdescript="Left Curly Brace"),
+        "kirkos":
+            R(Key("rbrace"), rdescript="Right Curly Brace"),
         "angle":
-            R(Key("langle, rangle, left"), rdescript="Angle Brackets"),
+            R(Key("langle"), rdescript="Left Angle Bracket"),
+        "wrangle":
+            R(Key("rangle"), rdescript="Right Angle Bracket"),
         "(pipe | pipes) (sim | symbol)":
             R(Text("|"), rdescript="Pipe Symbol"),
         "pipes and":
@@ -91,6 +101,8 @@ class CustomPunctuation(MergeRule):
             R(Text("#"), rdescript="Hash Tag"),
         "apostrophe":
             R(Text("'"), rdescript="Apostrophe"),
+        "tinker":
+            R(Text("`"), rdescript='back tick'),
         "crunder":
             R(Text("_"), rdescript="Underscore"),
         "shawls":
