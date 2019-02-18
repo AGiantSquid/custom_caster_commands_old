@@ -116,7 +116,7 @@ class CustomPunctuation(MergeRule):
         'tarp [<npunc>]':
             R(Key("tab"), rdescript="Tab") * Repeat(extra="npunc"),
         'tarsh [<npunc>]':
-            R(Key("tab"), rdescript="Tab") * Repeat(extra="npunc"),
+            R(Key("s-tab"), rdescript="Tab") * Repeat(extra="npunc"),
         'shaber [<npunc>]':
             R(Key("c-rbracket"), rdescript="Tab") * Repeat(extra="npunc"),
         'shable [<npunc>]':

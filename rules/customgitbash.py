@@ -9,7 +9,7 @@ Command-module for git
 """
 # ---------------------------------------------------------------------------
 
-from dragonfly import (Grammar, AppContext, Mimic,
+from dragonfly import (Grammar, AppContext, Mimic, Dictation,
                        Key, Text)
 
 from caster.lib import control
@@ -26,11 +26,19 @@ class CustomGitBashRule(MergeRule):
     mapping = {
         "initialize repository":
             Text("git init") + Key("enter"),
+        "log":
+            Key("g, i, t, space, l, o, g") + Key("enter"),
+        "Re-base":
+            Key("g, i, t, space, r, e, b, a, s, e,  space"),
+        "Re-base interactive":
+            Key("g, i, t, space, r, e, b, a, s, e,  space, minus, i, space, H, E, A, D, ~"),
         "add":
-            R(Key("g, i, t, space, a, d, d, space, minus, u, enter"),
+            R(Key("g, i, t, space, a, d, d, space, minus, p"),
               rdescript="GIT: Add All"),
         "status":
             R(Key("g, i, t, space, s, t, a, t, u, s, enter"), rdescript="GIT: Status"),
+        "reset":
+            R(Key("g, i, t, space, r, e, s, e, t, space, minus, minus, s, o, f, t, space, H, E, A, D, ~"), rdescript="GIT: Reset"),
         "commit":
             R(Key(
                 "g, i, t, space, c, o, m, m, i, t, space, minus, m, space, apostrophe, apostrophe, left"
@@ -59,7 +67,7 @@ class CustomGitBashRule(MergeRule):
         "fetch":
             R(Text("git fetch") + Key("enter"), rdescript="GIT: Fetch"),
         "(get push | push)":
-            R(Text("git push ") + Key("enter"), rdescript="GIT: Push"),
+            R(Text("git push "), rdescript="GIT: Push"),
         "(get push origin | push origin)":
             R(Text("git push -u origin "), rdescript="GIT: Push Origin"),
         "pull":
@@ -67,7 +75,11 @@ class CustomGitBashRule(MergeRule):
         "dirrup":
             R(Text("cd ../ ; ls;") + Key("enter"), rdescript="GIT: Up Directory"),
         "list":
-            R(Text("ls") + Key("enter"), rdescript="GIT: List"),
+            R(Text("ls "), rdescript="GIT: List"),
+        "list all":
+            R(Text("ls -la "), rdescript="GIT: List all"),
+        "Moved or": # move dir
+            R(Text("mv "), rdescript="GIT: Move"),
         "make directory":
             R(Text("mkdir "), rdescript="GIT: Make Directory"),
         "abort":
@@ -94,7 +106,7 @@ class CustomGitBashRule(MergeRule):
         "exit":
             R(Text("exit") + Key("enter"), rdescript="GIT: Exit"),
         "stash":
-            R(Text("git stash") + Key("enter"), rdescript="GIT: Stash"),
+            R(Text("git stash "), rdescript="GIT: Stash"),
         # "stash apply [<n>]":            R(Text("git stash apply")+Function(_apply), rdescript="GIT: Stash Apply"),
         "stash list":
             R(Text("git stash list") + Key("enter"), rdescript="GIT: Stash List"),
@@ -104,12 +116,12 @@ class CustomGitBashRule(MergeRule):
             R(Text("git cherry-pick "), rdescript="GIT: Cherry Pick"),
         "abort cherry pick":
             R(Text("git cherry-pick --abort"), rdescript="GIT: Abort Cherry Pick"),
-        "GUI | gooey":
-            R(Text("git gui") + Key("enter"), rdescript="GIT: gui"),
+        # "GUI | gooey":
+        #     R(Text("git gui") + Key("enter"), rdescript="GIT: gui"),
         "blame":
             R(Text("git blame PATH -L FIRSTLINE,LASTLINE"), rdescript="GIT: Blame"),
-        "gooey blame":
-            R(Text("git gui blame PATH"), rdescript="GIT: GUI Blame"),
+        # "gooey blame":
+        #     R(Text("git gui blame PATH"), rdescript="GIT: GUI Blame"),
         "search recursive":
             R(Text("grep -rinH \"PATTERN\" *"), rdescript="GREP: Search Recursive"),
         "search recursive count":
@@ -122,8 +134,10 @@ class CustomGitBashRule(MergeRule):
             R(Text(" > FILENAME"), rdescript="Bash: To File"),
 
         # Specific Commands
-        "CD":
-            R(Text("cd ; ls") + Key("left") + Key("left") + Key("left") + Key("left"), rdescript="GIT: Navigate To Caster Directory"),
+        "remove directory [<text>]":
+            R(Text("rm -rf ") + Text("%(text)s"), rdescript="GIT: Navigate To Caster Directory"),
+        "CD [<text>]":
+            R(Text("cd ") + Text("%(text)s") + Text("; ls") + Key("left") + Key("left") + Key("left") + Key("left"), rdescript="GIT: Navigate To Caster Directory"),
         "CD Castor":
             R(Text("cd /c/NatLink/NatLink/MacroSystem/caster") + Key("enter"), rdescript="GIT: Navigate To Caster Directory"),
         "CD custom Castor":
@@ -137,8 +151,8 @@ class CustomGitBashRule(MergeRule):
             R(Text("clear") + Key("enter"), rdescript="GIT: Check Out"),
         "Cat":
             R(Text("cat "), rdescript="GIT: Check Out"),
-        "SSH":
-            R(Text("ssh "), rdescript="GIT: Check Out"),
+        "SSH [<text>]":
+            R(Text("ssh ") + Text("%(text)s"), rdescript="GIT: ssh"),
         "pseudo":
             R(Text("sudo "), rdescript="GIT: Check Out"),
         "apt get install":
@@ -148,8 +162,9 @@ class CustomGitBashRule(MergeRule):
     }
     extras = [
         IntegerRefST("n", 1, 10000),
+        Dictation("text"),
     ]
-    defaults = {"n": 0}
+    defaults = {"n": 0, "text": ""}
 
 
 # ---------------------------------------------------------------------------
