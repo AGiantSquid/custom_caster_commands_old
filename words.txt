@@ -1,0 +1,31 @@
+<<<ANY>>>
+# caster\apps\dragon.py
+(lock Dragon | deactivate) -> snore
+
+# caster\apps\sublime.py
+transform upper -> uppercase
+transform lower -> lowercase
+
+
+# caster\lib\ccr\core\nav.py
+# won't work
+find -> marco
+kick -> Jeff
+(kick double|double kick) -> duke
+undo [<n>] -> dizzle [<n>]
+redo [<n>] -> rizzle [<n>]
+maxiwin -> Wendy max
+window (left | lease) [<n>] -> Wendy crimp [<n>]
+window (right | ross) [<n>] -> Wendy ross [<n>]
+monitor (left | lease) [<n>] -> mahni crimp [<n>]
+monitor (right | ross) [<n>] -> mahni ross [<n>]
+close tab [<n>] -> totch
+
+# does work
+save -> sage
+dredge -> swick
+
+# Won't work
+cut [<nnavi500>] -> snatch [<nnavi500>]
+deli [<nnavi50>] -> spunk [<nnavi500>]
+clear [<nnavi50>] -> junk [<nnavi500>]
