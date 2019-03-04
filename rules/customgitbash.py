@@ -9,8 +9,7 @@ Command-module for git
 """
 # ---------------------------------------------------------------------------
 
-from dragonfly import (Grammar, AppContext, Mimic, Dictation,
-                       Key, Text)
+from dragonfly import (Grammar, AppContext, Mimic, Dictation, Key, Text)
 
 from caster.lib import control
 from caster.lib import settings
@@ -31,14 +30,17 @@ class CustomGitBashRule(MergeRule):
         "Re-base":
             Key("g, i, t, space, r, e, b, a, s, e,  space"),
         "Re-base interactive":
-            Key("g, i, t, space, r, e, b, a, s, e,  space, minus, i, space, H, E, A, D, ~"),
+            Key("g, i, t, space, r, e, b, a, s, e,  space, minus, i, space, H, E, A, D, ~"
+                ),
         "add":
-            R(Key("g, i, t, space, a, d, d, space, minus, p"),
-              rdescript="GIT: Add All"),
+            R(Key("g, i, t, space, a, d, d, space, minus, p"), rdescript="GIT: Add All"),
         "status":
             R(Key("g, i, t, space, s, t, a, t, u, s, enter"), rdescript="GIT: Status"),
         "reset":
-            R(Key("g, i, t, space, r, e, s, e, t, space, minus, minus, s, o, f, t, space, H, E, A, D, ~"), rdescript="GIT: Reset"),
+            R(Key(
+                "g, i, t, space, r, e, s, e, t, space, minus, minus, s, o, f, t, space, H, E, A, D, ~"
+            ),
+              rdescript="GIT: Reset"),
         "commit":
             R(Key(
                 "g, i, t, space, c, o, m, m, i, t, space, minus, m, space, apostrophe, apostrophe, left"
@@ -78,7 +80,7 @@ class CustomGitBashRule(MergeRule):
             R(Text("ls "), rdescript="GIT: List"),
         "list all":
             R(Text("ls -la "), rdescript="GIT: List all"),
-        "Moved or": # move dir
+        "Moved or":  # move dir
             R(Text("mv "), rdescript="GIT: Move"),
         "make directory":
             R(Text("mkdir "), rdescript="GIT: Make Directory"),
@@ -132,19 +134,25 @@ class CustomGitBashRule(MergeRule):
               rdescript="GREP: Search Recursive Filetype"),
         "to file":
             R(Text(" > FILENAME"), rdescript="Bash: To File"),
+        "search":
+            R(Key("c-r"), rdescript="Bash: To File"),
 
         # Specific Commands
         "remove directory [<text>]":
-            R(Text("rm -rf ") + Text("%(text)s"), rdescript="GIT: Navigate To Caster Directory"),
+            R(Text("rm -rf ") + Text("%(text)s"),
+              rdescript="GIT: Navigate To Caster Directory"),
         "CD [<text>]":
-            R(Text("cd ") + Text("%(text)s") + Text("; ls") + Key("left") + Key("left") + Key("left") + Key("left"), rdescript="GIT: Navigate To Caster Directory"),
+            R(Text("cd ") + Text("%(text)s") + Text("; ls") + Key("left") + Key("left") +
+              Key("left") + Key("left"),
+              rdescript="GIT: Navigate To Caster Directory"),
         "CD Castor":
-            R(Text("cd /c/NatLink/NatLink/MacroSystem/caster") + Key("enter"), rdescript="GIT: Navigate To Caster Directory"),
+            R(Text("cd /c/NatLink/NatLink/MacroSystem/caster") + Key("enter"),
+              rdescript="GIT: Navigate To Caster Directory"),
         "CD custom Castor":
-            R(Text("cd /c/NatLink/NatLink/MacroSystem/caster/user") + Key("enter"), rdescript="GIT: Navigate To Caster Directory"),
+            R(Text("cd /c/NatLink/NatLink/MacroSystem/caster/user") + Key("enter"),
+              rdescript="GIT: Navigate To Caster Directory"),
         "checkout develop":
             R(Text("git checkout develop") + Key("enter"), rdescript="GIT: Check Out"),
-
         "Mungo":
             R(Text("mongo "), rdescript="GIT: Check Out"),
         "Clear":
@@ -174,9 +182,7 @@ context2 = AppContext(executable="\\bash.exe")
 context3 = AppContext(executable="\\mintty.exe")
 context4 = AppContext(executable="\\ConEmu64.exe")
 
-grammar = Grammar("MINGW32", context=(
-    context | context2 | context3 | context4)
-)
+grammar = Grammar("MINGW32", context=(context | context2 | context3 | context4))
 
 if settings.SETTINGS["apps"]["gitbash"]:
     if settings.SETTINGS["miscellaneous"]["rdp_mode"]:

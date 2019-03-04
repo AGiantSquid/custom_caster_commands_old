@@ -19,6 +19,7 @@ def is_valid(module):
 modules = glob.glob(os.path.dirname(__file__) + "/*.py")
 # only valid filters will be added to the list
 __all__ = [
-    os.path.basename(f)[:-3] for f in modules
+    os.path.basename(f)[:-3]
+    for f in modules
     if (not f.endswith('__init__.py') and is_valid(os.path.basename(f)[:-3]))
 ]

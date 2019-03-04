@@ -10,7 +10,7 @@ from caster.lib.dfplus.merge.mergerule import MergeRule
 from caster.lib.dfplus.state.short import R
 
 
-class CustomSublimeCommands(MergeRule):
+class CustomVSCode(MergeRule):
     pronunciation = "custom sublime commands"
     mapping = {
         # my custom overrides
@@ -20,18 +20,28 @@ class CustomSublimeCommands(MergeRule):
             R(Key("c-d"), rdescript="Sublime: Ctrl + d"),
         "skip it":
             R(Key("c-k,c-d"), rdescript="Sublime: Ctrl + d, k"),
+        "uppercase":
+            R(Key("csa-u"), rdescript="Sublime: uppercase"),
+        "lowercase":
+            R(Key("csa-l"), rdescript="Sublime: uppercase"),
+        "cue jeep":
+            R(Key("a-up"), rdescript="Sublime: uppercase"),
+        "cue doom":
+            R(Key("a-down"), rdescript="Sublime: uppercase"),
         "execute":
-            R(Key("c-b"), rdescript="Sublime: Ctrl + b"),
+            R(Key("s-enter"), rdescript="Sublime: Ctrl + b"),
         "[go to] group [<n2>]":
             R(Key("c-%(n2)s"), rdescript="Sublime: Go to Group #"),
         "spring <n>":
             R(Key("c-g") + Pause("10") + Text("%(n)s") + Key("enter"),
               rdescript="Sublime: Go to Line #"),
         "crew [<text>]":
-            R(Key("c-i") + Pause("10") + Text("%(text)s") + Key("enter") + Key("escape"),
+            R(Key("c-i") + Pause("10") + Text("%(text)s") + Pause("10") + Key("enter") +
+              Key("escape"),
               rdescript="Sublime: Get Next"),
         "trail [<text>]":
-            R(Key("cs-i") + Pause("10") + Text("%(text)s") + Key("enter") + Key("escape"),
+            R(Key("c-u") + Pause("10") + Text("%(text)s") + Pause("10") + Key("enter") +
+              Key("escape"),
               rdescript="Sublime: Get Next"),
         "expand|fill quotes":
             R(Key("cs-space"), rdescript="Atom: Expand Selection to Quotes"),
@@ -61,14 +71,14 @@ class CustomSublimeCommands(MergeRule):
 
 #---------------------------------------------------------------------------
 
-context = AppContext(executable="sublime_text")
-grammar = Grammar("Sublime", context=context)
+context = AppContext(executable="code")
+grammar = Grammar("Visual Studio Code", context=context)
 
-if settings.SETTINGS["apps"]["sublime"]:
+if settings.SETTINGS["apps"]["visualstudiocode"]:
     if settings.SETTINGS["miscellaneous"]["rdp_mode"]:
-        control.nexus().merger.add_global_rule(CustomSublimeCommands())
+        control.nexus().merger.add_global_rule(CustomVSCode())
     else:
-        rule = CustomSublimeCommands(name="sublime")
+        rule = CustomVSCode(name="sublime")
         gfilter.run_on(rule)
         grammar.add_rule(rule)
         grammar.load()

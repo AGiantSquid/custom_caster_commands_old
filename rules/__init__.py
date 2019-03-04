@@ -4,7 +4,7 @@ import os
 
 
 def is_valid(module):
-    ''' This function attempts to import the rules in order to detect 
+    ''' This function attempts to import the rules in order to detect
     errors in their implementation . After they are imported, they are garbage collected
     when the function returns.'''
     try:
@@ -17,6 +17,7 @@ def is_valid(module):
 
 
 modules = glob.glob(os.path.dirname(__file__) + "/*.py")
+
 # only valid rules will be added to the list
 __all__ = [
     os.path.basename(f)[:-3]

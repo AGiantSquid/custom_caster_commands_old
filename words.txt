@@ -6,7 +6,6 @@
 transform upper -> uppercase
 transform lower -> lowercase
 
-
 # caster\lib\ccr\core\nav.py
 # won't work
 find -> marco
@@ -22,8 +21,11 @@ monitor (right | ross) [<n>] -> mahni ross [<n>]
 close tab [<n>] -> totch
 
 # does work
-save -> sage
 dredge -> swick
+
+# this breaks caster
+# save -> sage
+
 
 # Won't work
 cut [<nnavi500>] -> snatch [<nnavi500>]
